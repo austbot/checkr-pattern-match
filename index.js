@@ -241,9 +241,12 @@ function name_match(knownNames, name) {
         if (matcher) return true;
         else return false;
       }
-      
-      if(incomingNameParts.length === knownNameParts.length
-        && incomingNameParts.length >= LD(name, knownName)) return true;
+
+      let distanceArr = incomingNameParts.map((word, index) => LD(word, knownNameParts[index]));
+      let distanceTotal = R.reduce(R.add, 0, distanceArr);
+
+      if(distanceTotal <= incomingNameParts.length &&
+      distanceArr.indexOf(2) === -1) return true;
 
       if(intersection.length < 2) return false;
     }, knownNames)
