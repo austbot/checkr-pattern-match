@@ -8,3 +8,6 @@ Jump to https://github.com/austbot/checkr-pattern-match/blob/master/index.js#L12
 * Hoist difference, intersection and prop lookups into curried function vars above.
 * Find common denominators in tests cases and move them into their own functions for individual metrics/comparisons.
 * With the above then you can make sepearate processes out of each test metric or comparison and create a concurrent matching function that could recive a callback or return a promise to be resolved when all metrics are complete. 
+
+
+See concurrent branch for even more fun https://github.com/austbot/checkr-pattern-match/tree/concurrent
